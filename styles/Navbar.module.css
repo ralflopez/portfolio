@@ -1,0 +1,100 @@
+.navbar {
+  height: var(--navbar-height);
+  font-size: var(--font-sm);
+  background-color: var(--bg);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar nav div {
+  display: inline-block;
+}
+
+.navbar nav a {
+  margin-left: 1rem;
+}
+
+.menuItem {
+  text-transform: uppercase;
+  position: relative;
+  transition: transform;
+  transition-duration: 500ms;
+  position: relative;
+  display: inline-block;
+}
+
+.menuItem div:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: yellowgreen; */
+  display: flex;
+}
+
+.menuItem div:nth-child(1) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: bottom;
+  display: inline-block;
+}
+
+.menuItem div:nth-child(2) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: top;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0) rotateX(90deg);
+}
+
+.menuItem:hover div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+
+.menuItem:hover div:nth-child(2) span {
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+
+.menuBtn {
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: none;
+  background-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .menuItem {
+    display: none;
+  }
+}
