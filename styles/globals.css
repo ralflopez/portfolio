@@ -3,13 +3,12 @@
 :root {
   --bg: #f0f0f0;
   --text-color: #2a2a2a;
+  --accent: #cc0000;
 
-  --font-sm: 0.875rem;
-  --font-md: 1rem;
-  --font-lg: 1.125rem;
-  --font-xl: 1.25rem;
-  --font-2xl: 1.5rem;
-  --font-3xl: 1.875rem;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
 
   --navbar-height: 56px;
 }
@@ -30,4 +29,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  color: var(--accent);
+  background-color: transparent;
+}
+
+/* for firefox */
+::moz-selection {
+  color: var(--accent);
+  background-color: transparent;
 }

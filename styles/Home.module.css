@@ -1,5 +1,12 @@
 .container {
-  padding: 0 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  margin: 0 auto;
 }
 
 .main {
