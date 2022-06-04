@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/Navbar.module.css"
+import styles from "../styles/Navbar.module.scss"
 
 const pages = [
   { name: "Projects", href: "#" },

@@ -1,7 +1,9 @@
+@import "./variables";
+
 .navbar {
-  height: var(--navbar-height);
-  font-size: var(--font-sm);
-  background-color: var(--bg);
+  height: $navbar-height;
+  font-size: 0.9rem;
+  background-color: $bg;
   position: fixed;
   width: 100%;
   top: 0;

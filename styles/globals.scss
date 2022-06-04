@@ -1,25 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap");
-
-:root {
-  --bg: #f0f0f0;
-  --text-color: #2a2a2a;
-  --accent: #cc0000;
-
-  --screen-sm: 640px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1280px;
-
-  --navbar-height: 56px;
-}
+@import "./variables";
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "DM Sans", sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg);
+  color: $text-color;
+  background-color: $bg;
 }
 
 a {
@@ -32,12 +20,12 @@ a {
 }
 
 ::selection {
-  color: var(--accent);
+  color: $accent;
   background-color: transparent;
 }
 
 /* for firefox */
 ::moz-selection {
-  color: var(--accent);
+  color: $accent;
   background-color: transparent;
 }
