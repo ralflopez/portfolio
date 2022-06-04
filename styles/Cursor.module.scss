@@ -1,0 +1,32 @@
+$width: 80px;
+
+.cursor {
+  position: fixed;
+  width: $width;
+  height: $width;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
+  transition: all 500ms ease-out;
+  pointer-events: none;
+  & > div {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: difference;
+    animation: rotate 5000ms linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
