@@ -2,7 +2,7 @@
 
 .navbar {
   height: $navbar-height;
-  font-size: 0.9rem;
+  font-size: $font-xs;
   background-color: $bg;
   position: fixed;
   width: 100%;
@@ -52,7 +52,6 @@
   top: 0;
   left: 0;
   right: 0;
-  /* background-color: yellowgreen; */
   display: flex;
 }
 

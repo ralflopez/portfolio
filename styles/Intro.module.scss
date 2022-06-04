@@ -2,6 +2,7 @@
 
 .intro {
   padding: 20px 0;
+  margin-bottom: $section-spacing;
 }
 
 .intro h1 {
@@ -41,9 +42,9 @@
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 372px) {
   .intro h1 {
-    font-size: 2.25rem;
-    line-height: 2.25rem;
+    font-size: 2.7rem;
+    line-height: 2.7rem;
   }
 }
