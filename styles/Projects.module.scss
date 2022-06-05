@@ -1,0 +1,53 @@
+@import "./variables";
+
+.projects {
+  margin-bottom: $section-spacing;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    & > div {
+      font-size: $font-md + 0.5rem;
+
+      @media (min-width: $screen-md) {
+        font-size: $font-xl;
+        grid-column: 2 / span 2;
+      }
+
+      cursor: pointer;
+      display: block;
+      border-bottom: 1px solid $text-color;
+      margin-bottom: 56px;
+
+      p {
+        font-size: $font-xs;
+      }
+    }
+
+    // @for $i from 1 through 3 {
+    //   & > div:nth-child(#{$i}) {
+    //     grid-column-start: 2;
+    //     grid-row-start: $i;
+    //   }
+    // }
+
+    .nameAccent {
+      color: $accent;
+    }
+
+    .previewContainer {
+      position: relative;
+      width: 500px;
+      height: 200px;
+
+      img {
+        left: 10px;
+      }
+    }
+  }
+}

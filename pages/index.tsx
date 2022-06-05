@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { Heading, Intro, Navbar, Skills } from "../components"
+import { Intro, Navbar, Projects, Skills } from "../components"
 import { Cursor } from "../components/Cursor"
 import styles from "../styles/Home.module.scss"
 
@@ -16,6 +16,7 @@ const Home: NextPage = () => {
       <Navbar />
       <Intro />
       <Skills />
+      <Projects />
     </div>
   )
 }
