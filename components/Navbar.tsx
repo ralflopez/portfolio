@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "../styles/Navbar.module.scss"
+import { RollingTextAnimation } from "./RollingTextAnimation"
 
 const pages = [
   { name: "Projects", href: "#" },
@@ -18,26 +19,7 @@ export const Navbar = () => {
           {/* Links */}
           {pages.map((p) => (
             <a key={p.href} href={p.href} className={styles.menuItem}>
-              <div>
-                {p.name.split("").map((letter, i) => (
-                  <span
-                    key={letter + i}
-                    style={{ "--index": i } as React.CSSProperties}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </div>
-              <div>
-                {p.name.split("").map((letter, i) => (
-                  <span
-                    key={letter + i}
-                    style={{ "--index": i } as React.CSSProperties}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </div>
+              <RollingTextAnimation text={{ name: p.name }} />
             </a>
           ))}
         </nav>
