@@ -1,0 +1,55 @@
+@import "./variables";
+
+.modalBg {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  backdrop-filter: blur(6px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 40;
+  overflow: auto;
+  transition: all 500ms ease-out;
+  transform: translate3d(0, 100vh, 0);
+  padding: 0 20px;
+
+  .modal {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: 32px auto;
+    background-color: $bg;
+    position: relative;
+    border: 1px solid $text-color;
+
+    .modalHeader {
+      background-color: $bg;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: $navbar-height;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid $text-color;
+      position: sticky;
+      top: 0;
+
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: $font-md;
+        cursor: pointer;
+
+        .accent {
+          color: $accent;
+        }
+      }
+    }
+
+    .body {
+      padding: 32px 0;
+    }
+  }
+}
