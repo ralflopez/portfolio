@@ -1,0 +1,99 @@
+@import "./variables";
+
+.contact {
+  margin-bottom: $section-spacing;
+
+  h2 {
+    font-weight: normal;
+    font-size: $font-md;
+    margin: 0;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $text-color;
+  }
+
+  form {
+    div > div {
+      margin-bottom: 4px;
+    }
+
+    input,
+    textarea {
+      background-color: $bg;
+      resize: none;
+      font-size: $font-sm;
+      border: 1px solid $text-color;
+      padding: 8px;
+      outline: none;
+      width: 100%;
+      margin-bottom: 8px;
+      font-family: "DM Sans", sans-serif;
+
+      &:focus {
+        border: 1px solid $accent;
+      }
+    }
+
+    textarea {
+      height: $font-md * 5;
+    }
+
+    button {
+      border: none;
+      margin-top: 8px;
+      background-color: $text-color;
+      padding: 20px 28px;
+      color: white;
+      //   border-radius: 50%;
+      width: 100%;
+      cursor: pointer;
+      transition: all 100ms linear;
+
+      &:hover {
+        background-color: $accent;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    & > div:nth-child(2) {
+      padding: 0;
+      order: -1;
+
+      @media (min-width: $screen-md) {
+        order: 2;
+        padding: 0px 16px;
+      }
+    }
+  }
+
+  .socialBtn {
+    font-size: $font-md + 0.5rem;
+
+    @media (min-width: $screen-md) {
+      font-size: $font-md + 0.5rem;
+      grid-column: 2 / span 2;
+    }
+
+    cursor: pointer;
+    display: block;
+    border-bottom: 1px solid $text-color;
+    margin-bottom: 20px;
+
+    p {
+      font-size: $font-xs;
+      color: $text-color;
+    }
+
+    .nameAccent {
+      color: $accent;
+    }
+  }
+}
