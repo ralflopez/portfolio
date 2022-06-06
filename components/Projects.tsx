@@ -49,6 +49,7 @@ export const Projects = () => {
       <div className={styles.grid}>
         {projects.map((project) => (
           <div
+            className={styles.gridElement}
             key={project.name}
             onClick={() => {
               modal.open(project.component)
