@@ -9,11 +9,16 @@ body {
   color: $text-color;
   background-color: $bg;
   font-size: $font-sm;
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+section {
+  padding-top: $navbar-height;
 }
 
 * {

@@ -3,7 +3,8 @@ import styles from "../styles/Navbar.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
 
 const pages = [
-  { name: "Projects", href: "#" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ]
