@@ -1,0 +1,33 @@
+@import "./variables";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  h4 {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+  }
+
+  .name {
+    font-size: $font-lg;
+    grid-column-start: 1;
+  }
+
+  .caption {
+    font-size: $font-md;
+    grid-column-start: 1;
+
+    button {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      display: block;
+      margin-top: 16px;
+      font-size: $font-sm;
+      cursor: pointer;
+      color: $accent;
+    }
+  }
+}

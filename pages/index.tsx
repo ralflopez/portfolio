@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { Intro, Navbar, Projects, Skills } from "../components"
+import { About, Intro, Navbar, Projects, Skills } from "../components"
 import { Contact } from "../components/Contact"
 import { Cursor } from "../components/Cursor"
 import { ModalContextProvider } from "../contexts"
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
         <Cursor />
         <Navbar />
         <Intro />
+        <About />
         <Skills />
         <Projects />
         <Contact />
