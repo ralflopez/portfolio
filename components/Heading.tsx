@@ -8,7 +8,7 @@ interface Props {
 
 export const Heading = ({ caption, title }: Props) => {
   return (
-    <div className={styles.heading}>
+    <div className={`${styles.heading} heading`}>
       <p>/ {title}</p>
       <p>{caption}</p>
     </div>

@@ -3,9 +3,13 @@
 .heading {
   display: flex;
   align-items: flex-end;
-  position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
   text-transform: uppercase;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 
   p {
     margin: 0;

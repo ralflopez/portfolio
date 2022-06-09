@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styles from "../styles/Navbar.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
+import { gsap } from "../config"
 
 const pages = [
   { name: "Skills", href: "#skills" },
@@ -10,11 +11,44 @@ const pages = [
 ]
 
 export const Navbar = () => {
+  const navbarRef = useRef<HTMLDivElement>(null)
+  const brandRef = useRef<HTMLParagraphElement>(null)
+  const navRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 0.5,
+      },
+    })
+    tl.set(navbarRef.current, { visibility: "visible" })
+      .delay(1.2)
+      .fromTo(navbarRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5 })
+      .fromTo(
+        brandRef.current,
+        {
+          y: -100,
+        },
+        {
+          y: 0,
+        }
+      )
+      .fromTo(
+        navRef.current,
+        {
+          y: -100,
+        },
+        { y: 0 }
+      )
+  }, [])
+
   return (
-    <div className={styles.navbar}>
+    <div ref={navbarRef} className={styles.navbar}>
       <div className={styles.container}>
-        <p className={styles.brand}>Ralf Lopez </p>
-        <nav>
+        <p ref={brandRef} className={styles.brand}>
+          Ralf Lopez{" "}
+        </p>
+        <nav ref={navRef}>
           {/* Menu */}
           <button className={styles.menuBtn}>MENU+</button>
           {/* Links */}

@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Heading } from "./Heading"
 import styles from "../styles/Contact.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
 import Link from "next/link"
+import { useReveal } from "../hooks"
 
 const socialMedia = [
   {
@@ -17,13 +18,16 @@ const socialMedia = [
 export const Contact = () => {
   const [message, setMessage] = useState("")
   const [from, setFrom] = useState("")
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useReveal(sectionRef)
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
   }
 
   return (
-    <section id='contact' className={styles.contact}>
+    <section ref={sectionRef} id='contact' className={styles.contact}>
       <Heading title='Contact' caption='Lets connect' />
       <div className={styles.grid}>
         <div>

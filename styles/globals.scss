@@ -10,6 +10,7 @@ body {
   background-color: $bg;
   font-size: $font-sm;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -34,4 +35,18 @@ section {
 ::moz-selection {
   color: $accent;
   background-color: transparent;
+}
+
+.line {
+  overflow: hidden;
+}
+
+#hero-text {
+  span:last-child div:last-child .char:last-child {
+    color: $accent;
+  }
+}
+
+section {
+  visibility: hidden;
 }

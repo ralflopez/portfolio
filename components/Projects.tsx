@@ -1,4 +1,10 @@
-import React, { ReactNode, useContext, useState } from "react"
+import React, {
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 import { Heading } from "./Heading"
 import styles from "../styles/Projects.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
@@ -10,6 +16,8 @@ import {
   PasswordManager,
   AuthService,
 } from "./ProjectDocs"
+import { gsap } from "../config"
+import { useReveal } from "../hooks"
 
 const projects = [
   {
@@ -43,8 +51,12 @@ const projects = [
 export const Projects = () => {
   const modal = useContext(ModalContext)
 
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useReveal(sectionRef)
+
   return (
-    <section id='projects' className={styles.projects}>
+    <section ref={sectionRef} id='projects' className={styles.projects}>
       <Heading title='Projects' caption='Here are some of my works.' />
       <div className={styles.grid}>
         {projects.map((project) => (

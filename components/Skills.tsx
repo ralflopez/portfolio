@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import { Heading } from "./Heading"
 import styles from "../styles/Skills.module.scss"
 import {
@@ -18,6 +18,7 @@ import {
   postgres,
   docker,
 } from "../icons"
+import { useReveal } from "../hooks"
 
 const skills = [
   {
@@ -41,8 +42,12 @@ const skills = [
 ]
 
 export const Skills = () => {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useReveal(sectionRef)
+
   return (
-    <section id='skills' className={styles.skills}>
+    <section ref={sectionRef} id='skills' className={styles.skills}>
       <Heading title='Skills' caption='Whats in my toolbelt.' />
       <div className={styles.grid}>
         {skills.map((skill) => (
