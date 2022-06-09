@@ -1,5 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
+import { useEffect, useRef, useState } from "react"
 import { About, Intro, Navbar, Projects, Skills } from "../components"
 import { Contact } from "../components/Contact"
 import { Cursor } from "../components/Cursor"
@@ -19,8 +20,8 @@ const Home: NextPage = () => {
         <Navbar />
         <Intro />
         <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Contact />
       </div>
     </ModalContextProvider>
