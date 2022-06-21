@@ -11,8 +11,16 @@ const socialMedia = [
     username: "ralflopez3@gmail.com",
     link: "http://www.gmail.com",
   },
-  { name: "Github", username: "ralflopez", link: "http://www.github.com" },
-  { name: "LinkedIn", username: "Ralf Lopez", link: "http://www.linkedin.com" },
+  {
+    name: "Github",
+    username: "ralflopez",
+    link: "https://github.com/ralflopez",
+  },
+  {
+    name: "LinkedIn",
+    username: "Ralf Alexander Lopez",
+    link: "https://www.linkedin.com/in/ralf-alexander-lopez/",
+  },
 ]
 
 export const Contact = () => {
@@ -59,8 +67,8 @@ export const Contact = () => {
               <a href={s.link} target='_blank' rel='noreferrer'>
                 <RollingTextAnimation text={{ name: s.name }} />
                 <span className={styles.nameAccent}> *</span>
-                <p>{s.username}</p>
               </a>
+              <p>{s.username}</p>
             </div>
           ))}
         </div>
