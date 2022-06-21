@@ -1,4 +1,10 @@
-import React, { createContext, useEffect, useRef, useState } from "react"
+import React, {
+  createContext,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 import { Modal } from "../components/Modal"
 
 type Component = () => JSX.Element
@@ -15,14 +21,13 @@ export const ModalContext = createContext({
 })
 
 export const ModalContextProvider = ({ children }: any) => {
-  const bodyRef = useRef<HTMLBodyElement | null>(null)
+  const bodyRef = useRef<HTMLElement | null>(null)
   const modalRef = useRef<HTMLDivElement | null>(null)
   const [modal, setModal] = useState(initState)
 
   useEffect(() => {
-    const body = document.querySelector("body")
+    const body = document.querySelector("html")
     bodyRef.current = body
-    console.log(body)
   }, [])
 
   const hideBodyScrolbar = () => {
