@@ -1,3 +1,5 @@
+@import "./variables";
+
 $width: 80px;
 
 .cursor {
@@ -10,6 +12,11 @@ $width: 80px;
   transform: translate(-100%, -100%);
   transition: all 500ms ease-out;
   pointer-events: none;
+
+  @media (max-width: $screen-md) {
+    display: none;
+  }
+
   & > div {
     height: 100%;
     width: 100%;
