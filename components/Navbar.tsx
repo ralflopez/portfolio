@@ -4,9 +4,9 @@ import { RollingTextAnimation } from "./RollingTextAnimation"
 import { gsap } from "../config"
 
 const pages = [
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
   { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -45,9 +45,12 @@ export const Navbar = () => {
   return (
     <div ref={navbarRef} className={styles.navbar}>
       <div className={styles.container}>
-        <p ref={brandRef} className={styles.brand}>
+        {/* <p ref={brandRef} className={styles.brand}>
           Ralf Lopez{" "}
-        </p>
+        </p> */}
+        <a href='#' className={styles.brand}>
+          <RollingTextAnimation text={{ name: "Ralf-Lopez" }} />
+        </a>
         <nav ref={navRef}>
           {/* Menu */}
           <button className={styles.menuBtn}>MENU+</button>
