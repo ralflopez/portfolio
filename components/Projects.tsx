@@ -1,54 +1,17 @@
-import React, {
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react"
+import React, { useContext, useRef } from "react"
 import { Heading } from "./Heading"
 import styles from "../styles/Projects.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
-import Image from "next/image"
 import { ModalContext } from "../contexts"
-import {
-  CryptoTrading,
-  EWallet,
-  PasswordManager,
-  AuthService,
-} from "./ProjectDocs"
-import { gsap } from "../config"
 import { useReveal } from "../hooks"
+import { IProjects } from "../pages"
+import { ProjectDocsModal } from "./ProjectDocsModal"
 
-const projects = [
-  {
-    name: "Password-Manager",
-    stack:
-      "Typescript, Nest.js, Next.js, Chakra UI, REST, PostgreSQL, Session, Prisma, Docker, Jest",
-    img: "/images/vault-pass.gif",
-    component: PasswordManager,
-  },
-  {
-    name: "E - Wallet",
-    stack:
-      "Typescript, Nest.js, Next.js, Chakra UI, GraphQL, PostgreSQL, TypeORM, Session, Docker, Paymongo API",
-    img: "/images/e-wallet.gif",
-    component: EWallet,
-  },
-  {
-    name: "Crypto-Trading",
-    stack:
-      "Typescript, Nest.js, Next.js, Tailwind CSS, GraphQL, PostgreSQL, Prisma, JWT, Docker, CoinCap API, Jest",
-    img: "/images/paper-trade.gif",
-    component: CryptoTrading,
-  },
-  {
-    name: "Auth-Service",
-    stack: "Go, PostgreSQL, JWT, Session, Docker",
-    component: AuthService,
-  },
-]
+interface Props {
+  projects: IProjects[]
+}
 
-export const Projects = () => {
+export const Projects = ({ projects }: Props) => {
   const modal = useContext(ModalContext)
 
   const sectionRef = useRef<HTMLElement>(null)
@@ -64,12 +27,14 @@ export const Projects = () => {
             className={styles.gridElement}
             key={project.name}
             onClick={() => {
-              modal.open(project.component)
+              modal.open(() => (
+                <ProjectDocsModal content={project.content} url={project.url} />
+              ))
             }}
           >
             <RollingTextAnimation text={{ name: project.name }} />
             <span className={styles.nameAccent}> *</span>
-            <p>{project.stack}</p>
+            <p>{project.description}</p>
           </div>
         ))}
       </div>
