@@ -3,13 +3,14 @@
 .intro {
   padding: 20px 0;
   visibility: hidden;
+  padding-top: $navbar-height + 20px;
   // margin-bottom: $section-spacing;
 }
 
 .intro h1 {
   margin: 0;
   font-weight: normal;
-  font-size: 5.7rem;
+  font-size: 6rem;
   text-transform: uppercase;
   line-height: 5.5rem;
   margin-bottom: 28px;
