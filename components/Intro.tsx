@@ -33,7 +33,7 @@ export const Intro = () => {
     <section id='intro' className={styles.intro}>
       <h1 id='hero-text'>
         <span>A software engineer </span>
-        <span>driven by design & quality.</span>
+        <span>driven by quality & impact!</span>
         {/* <div className={styles.ball}></div> */}
       </h1>
       <div>

@@ -1,5 +1,7 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
+import styles from "../styles/ProjectDocsModal.module.scss"
+import { RollingTextAnimation } from "./RollingTextAnimation"
 
 interface Props {
   content: string
@@ -9,9 +11,11 @@ interface Props {
 export const ProjectDocsModal = ({ content, url }: Props) => {
   return (
     <>
-      <p>
+      <p className={styles.link}>
         <a href={url} target='_blank' rel='noreferrer'>
-          Visit Github Repository *
+          <RollingTextAnimation
+            text={{ name: "Click-To-Visit-Github-Repository *" }}
+          />
         </a>
       </p>
       <ReactMarkdown>{content && content}</ReactMarkdown>
