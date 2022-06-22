@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styles from "../styles/Navbar.module.scss"
 import { RollingTextAnimation } from "./RollingTextAnimation"
 import { gsap } from "../config"
@@ -11,9 +11,36 @@ const pages = [
 ]
 
 export const Navbar = () => {
+  const [showNav, setShowNav] = useState(false)
+
   const navbarRef = useRef<HTMLDivElement>(null)
   const brandRef = useRef<HTMLParagraphElement>(null)
   const navRef = useRef<HTMLElement>(null)
+  const bodyRef = useRef<HTMLElement | null>(null)
+
+  const hideBodyScrolbar = () => {
+    if (!bodyRef.current) return
+    bodyRef.current.style.overflow = "hidden"
+  }
+
+  const showBodyScrollbar = () => {
+    if (!bodyRef.current) return
+    bodyRef.current.style.overflow = "auto"
+  }
+
+  const toggleNav = () => {
+    if (!showNav) {
+      hideBodyScrolbar()
+    } else {
+      showBodyScrollbar()
+    }
+    setShowNav((s) => !s)
+  }
+
+  useEffect(() => {
+    const body = document.querySelector("html")
+    bodyRef.current = body
+  }, [])
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -44,6 +71,20 @@ export const Navbar = () => {
 
   return (
     <div ref={navbarRef} className={styles.navbar}>
+      {showNav && (
+        <div className={styles.smallNav}>
+          <nav ref={navRef}>
+            {/* Links */}
+            {pages.map((p) => (
+              <div key={p.href}>
+                <a key={p.href} href={p.href}>
+                  <RollingTextAnimation text={{ name: p.name }} />
+                </a>
+              </div>
+            ))}
+          </nav>
+        </div>
+      )}
       <div className={styles.container}>
         {/* <p ref={brandRef} className={styles.brand}>
           Ralf Lopez{" "}
@@ -53,7 +94,9 @@ export const Navbar = () => {
         </a>
         <nav ref={navRef}>
           {/* Menu */}
-          <button className={styles.menuBtn}>MENU+</button>
+          <button className={styles.menuBtn} onClick={toggleNav}>
+            MENU+
+          </button>
           {/* Links */}
           {pages.map((p) => (
             <a key={p.href} href={p.href} className={styles.menuItem}>
