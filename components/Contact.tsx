@@ -6,11 +6,11 @@ import Link from "next/link"
 import { useReveal } from "../hooks"
 
 const socialMedia = [
-  {
-    name: "Email",
-    username: "ralflopez3@gmail.com",
-    link: "http://www.gmail.com",
-  },
+  // {
+  //   name: "Email",
+  //   username: "ralflopez3@gmail.com",
+  //   link: "http://www.gmail.com",
+  // },
   {
     name: "Github",
     username: "ralflopez",
@@ -32,6 +32,11 @@ export const Contact = () => {
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+  }
+
+  const copyEmailToClipboard = () => {
+    navigator.clipboard.writeText("ralflopez3@gmail.com")
+    alert("Copied to clipboard: ralflopez3@gmail.com")
   }
 
   return (
@@ -62,6 +67,13 @@ export const Contact = () => {
           </form>
         </div>
         <div>
+          <div className={styles.socialBtn}>
+            <a onClick={copyEmailToClipboard}>
+              <RollingTextAnimation text={{ name: "Email" }} />
+              <span className={styles.nameAccent}> *</span>
+            </a>
+            <p>ralflopez3@gmail.com</p>
+          </div>
           {socialMedia.map((s) => (
             <div key={s.name} className={styles.socialBtn}>
               <a href={s.link} target='_blank' rel='noreferrer'>
