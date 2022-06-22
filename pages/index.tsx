@@ -53,20 +53,20 @@ export const getStaticProps = async () => {
       url: "https://github.com/ralflopez/bahagi-digital-wallet",
     },
     {
-      name: "Password-Manager",
-      description:
-        "Typescript, Nest.js, Next.js, Chakra UI, REST, PostgreSQL, Session, Prisma, Docker, Jest",
-      content:
-        "https://raw.githubusercontent.com/ralflopez/vault-pass/main/README.md",
-      url: "https://github.com/ralflopez/vault-pass",
-    },
-    {
       name: "Crypto-Trading",
       description:
         "Typescript, Nest.js, Express, Tailwind CSS, GraphQL, PostgreSQL, Prisma, JWT, Docker, CoinCap API, Jest",
       content:
         "https://raw.githubusercontent.com/ralflopez/paper-trade/main/README.md",
       url: "https://github.com/ralflopez/paper-trade",
+    },
+    {
+      name: "Password-Manager",
+      description:
+        "Typescript, Nest.js, Next.js, Chakra UI, REST, PostgreSQL, Session, Prisma, Docker, Jest",
+      content:
+        "https://raw.githubusercontent.com/ralflopez/vault-pass/main/README.md",
+      url: "https://github.com/ralflopez/vault-pass",
     },
     {
       name: "Auth-Service",
