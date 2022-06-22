@@ -43,7 +43,7 @@ export const Contact = () => {
     <section ref={sectionRef} id='contact' className={styles.contact}>
       <Heading title='Contact' caption='Lets connect' />
       <div className={styles.grid}>
-        <div>
+        {/* <div>
           <form onSubmit={submit}>
             <h2>Send me an email</h2>
             <div>
@@ -65,7 +65,7 @@ export const Contact = () => {
             </div>
             <button type='submit'>Send</button>
           </form>
-        </div>
+        </div> */}
         <div>
           <div className={styles.socialBtn}>
             <a onClick={copyEmailToClipboard}>
