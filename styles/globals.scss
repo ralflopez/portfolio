@@ -9,8 +9,11 @@ body {
   color: $text-color;
   background-color: $bg;
   font-size: $font-sm;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -19,7 +22,6 @@ a {
 }
 
 section {
-  scroll-margin-top: 56px;
   padding-top: $navbar-height;
   visibility: hidden;
 }
