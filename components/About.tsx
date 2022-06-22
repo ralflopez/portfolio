@@ -1,13 +1,20 @@
-import React, { useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import { Heading } from "./Heading"
 import styles from "../styles/About.module.scss"
 import { gsap } from "../config"
 import { useReveal } from "../hooks"
+import { ModalContext } from "../contexts"
+import { AboutModal } from "./AboutModal"
 
 export const About = () => {
+  const modal = useContext(ModalContext)
   const sectionRef = useRef<HTMLElement>(null)
 
   useReveal(sectionRef)
+
+  const openViewMore = () => {
+    modal.open(AboutModal)
+  }
 
   return (
     <section className={styles.about} ref={sectionRef} id='about'>
@@ -23,7 +30,7 @@ export const About = () => {
             <p>
               A software engineer based in the Philippines. {"I'm"} here to
               provide my service to fill your {"company's"} needs.{" "}
-              <button>
+              <button onClick={openViewMore}>
                 View more <span>*</span>
               </button>
             </p>

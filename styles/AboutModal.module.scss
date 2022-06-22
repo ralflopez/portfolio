@@ -1,0 +1,11 @@
+@import "./variables";
+
+.aboutModal {
+  font-size: $font-md;
+  font-family: serif;
+
+  div {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
