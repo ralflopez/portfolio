@@ -15,7 +15,6 @@ export const useReveal = (sectionRef: React.RefObject<HTMLElement>) => {
           trigger: sectionRef.current,
           start: "20% 80%",
           end: "40% 70%",
-          markers: true,
           scrub: 1,
         },
       }
