@@ -19,7 +19,9 @@ a {
 }
 
 section {
+  scroll-margin-top: 56px;
   padding-top: $navbar-height;
+  visibility: hidden;
 }
 
 * {
@@ -47,6 +49,23 @@ section {
   }
 }
 
-section {
-  visibility: hidden;
+// Scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $accent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $text-color;
 }

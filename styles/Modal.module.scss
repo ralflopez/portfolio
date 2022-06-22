@@ -50,6 +50,17 @@
 
     .body {
       padding: 32px 0;
+      a {
+        color: $accent;
+      }
+
+      p > img {
+        max-width: 100%;
+      }
+
+      pre {
+        overflow: auto;
+      }
     }
   }
 }
