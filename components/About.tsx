@@ -5,6 +5,7 @@ import { gsap } from "../config"
 import { useReveal } from "../hooks"
 import { ModalContext } from "../contexts"
 import { AboutModal } from "./AboutModal"
+import { RollingTextAnimation } from "./RollingTextAnimation"
 
 export const About = () => {
   const modal = useContext(ModalContext)
@@ -34,6 +35,14 @@ export const About = () => {
                 View more <span>*</span>
               </button>
             </p>
+            <a
+              href='/CV_Ralf_Lopez.pdf'
+              target='_blank'
+              className={styles.viewCv}
+            >
+              <RollingTextAnimation text={{ name: "View-CV" }} />
+              <span> *</span>
+            </a>
           </div>
         </div>
       </div>
